@@ -1,5 +1,4 @@
 # Underscore.js
-*****
 ## 集合函数(Array or Object)
 
 **each**  _.each(list, iteratee, [context])  (iteratee: 迭代)
@@ -10,7 +9,6 @@ _.each([0, 1, , 3, false, undefined, null], function(elem, idx, list) {
     console.log(elem); // 0 1 undefined 3 false undefined null
 });
 _.each({a: undefined, undefined: 1, null: false, b: null}, function(value, key, list) {
-
     console.log(value); // undefined 1 false null
 });
 ```
@@ -23,6 +21,7 @@ _.map([0, 1, , 3, false, undefined, null], function(elem, idx, list) {
     return elem * 2;
 });
 > [0, 2, NaN, 6, 0, NaN, 0]
+
 _.map({a: undefined, undefined: 1, null: false, b: null}, function(value, key, list) {
     return elem * 2;
 });
@@ -37,6 +36,7 @@ _.reduce([0, 1, 2, 3], function(meno, val, idx, list) {
     return meno + val; // -1 + 0 + 1 + 2 + 3
 }, -1);
 > 5
+
 _.reduce({a: 0, undefined: 1, null: 2, b: 3}, function(meno, val, key, list) {
     console.log(key); // undefined null b
     return meno + val;
@@ -51,7 +51,8 @@ _.reduce({a: 0, undefined: 1, null: 2, b: 3}, function(meno, val, key, list) {
 _.reduceRight([[0, 1], [2, 3], [4, 5]], function(meno, val, idx, list) {
     return meno.concat(val);
 }, [6, 7]);
-> [6, 7, 4, 5, 2, 3, 0, 1]
+> [
+6, 7, 4, 5, 2, 3, 0, 1]
 _.reduceRight({a: 0, undefined: 1, null: 2, b: 3}, function(meno, val, key, list) {
     console.log(key); // null undefined a
     return meno + val;
@@ -67,6 +68,7 @@ _.find([0, 1, , 3, false, undefined, null], function(elem, idx, list) {
     return elem > 2;
 });
 > 3
+
 _.find({a: 0, undefined: 1, null: 2, b: 3}, function(val, key, list) {
     return val > 2;
 });
