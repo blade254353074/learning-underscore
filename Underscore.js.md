@@ -51,8 +51,8 @@ _.reduce({a: 0, undefined: 1, null: 2, b: 3}, function(meno, val, key, list) {
 _.reduceRight([[0, 1], [2, 3], [4, 5]], function(meno, val, idx, list) {
     return meno.concat(val);
 }, [6, 7]);
-> [
-6, 7, 4, 5, 2, 3, 0, 1]
+> [6, 7, 4, 5, 2, 3, 0, 1]
+
 _.reduceRight({a: 0, undefined: 1, null: 2, b: 3}, function(meno, val, key, list) {
     console.log(key); // null undefined a
     return meno + val;
